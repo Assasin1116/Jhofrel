@@ -7,16 +7,33 @@ body {
     margin: 0;
     padding: 0;
     background-color: #f4f4f4;
+    padding-top: 100px; /* Ajusta este valor según la altura de tu header */
+    overflow-y: auto; /* Asegura que solo haya desplazamiento vertical */
 }
 
 header {
+    position: fixed; /* Fija el header en la parte superior */
+    top: 0;
+    left: 0;
+    right: 0;
     background: #333;
     color: #fff;
-    padding: 5px 20px; /* Reduce el padding superior e inferior */
+    padding: 5px 20px; /* Ajusta el padding según tus necesidades */
     display: flex;
     align-items: center;
-    justify-content: space-between; /* Distribuye el espacio entre los elementos */
-    align-items: center; /* Centra verticalmente los elementos */
+    justify-content: space-between;
+    z-index: 1000; /* Asegúrate de que esté por encima del contenido */
+    transform: translateY(0); /* Inicialmente no hay desplazamiento */
+    transition: transform 0.3s ease; /* Animación suave */
+}
+
+a {
+    text-decoration: none; /* Elimina la línea de subrayado */
+    color: inherit; /* Mantiene el color del texto del elemento padre (en este caso, el h2) */
+}
+
+a:hover {
+    color: inherit; /* Mantiene el color cuando pasas el mouse por encima */
 }
 
 .logo {
@@ -26,12 +43,6 @@ header {
     margin-right: 15px;
 }
 
-.products {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 20px;
-}
 .jhofrel {
     margin-right: auto; /* Esto empuja los textos a la derecha */
 }
@@ -44,13 +55,11 @@ header {
     display: flex;
     opacity: 0.5; 
     transition: opacity 0.3s;
-    gap: 10%; 
-    display: flex;
+    gap: 5%; /* Reduce el espacio entre elementos */
     align-items: center; /* Centra verticalmente los textos */
-    display: flex;
-    align-items: center; /* Centra verticalmente los textos */
-    margin-left: auto; /* Esto coloca la sección de Conócenos y Tipo de Ropa a la derecha */
 }
+
+
 
 header.over {
     background-color: rgba(51, 51, 51, 0.8); 
@@ -64,18 +73,18 @@ header.over:hover {
     margin: 0;
     opacity: 0.9; 
 }
-***********
-.tipo {
+
+.tipo, .conocenos, .Prendas {
     position: relative; 
     display: inline-block; 
     font-size: 1em; 
     transition: color 0.3s, transform 0.3s; 
     color: white; 
-    margin-left: 20px; 
+    margin-left: 10px; /* Reducido a 10px para mayor visibilidad */
     white-space: nowrap;
 }
 
-.tipo::after {
+.tipo::after, .conocenos::after, .Prendas::after {
     content: '';
     display: block;
     width: 0; 
@@ -85,54 +94,27 @@ header.over:hover {
     position: absolute;
     left: 50%;
     bottom: -5px; 
-    transform: translateX(-50%); 
+    transform: translateX(-50%);
 }
 
-.tipo:hover {
+.tipo:hover, .conocenos:hover, .Prendas:hover {
     transform: scale(1.1); 
     color: white; 
     opacity: 1;
 }
 
-.tipo:hover::after {
+.tipo:hover::after, .conocenos:hover::after, .Prendas:hover::after {
     width: 100%; 
     opacity: 0.9;
 }
 
-
-**************************************
-.conocenos {
-    position: relative; 
-    display: inline-block; 
-    font-size: 1.2em; 
-    transition: color 0.3s, transform 0.3s; 
-    color: white; 
-    margin-left: 20px; /* Espacio entre los textos */
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 20px;
 }
 
-.conocenos::after {
-    content: '';
-    display: block;
-    width: 0; 
-    height: 2px; 
-    background: white; 
-    transition: width 0.3s; 
-    position: absolute;
-    left: 50%;
-    bottom: -5px; 
-    transform: translateX(-50%); 
-}
-
-.conocenos:hover {
-    transform: scale(1.1); 
-    color: white; 
-    opacity: 1;
-}
-
-.conocenos:hover::after {
-    width: 100%; 
-    opacity: 0.9;
-}
 .product-card {
     background: #fff;
     border: 1px solid #ddd;
@@ -181,7 +163,119 @@ button:hover {
 .whatsapp-icon:hover {
     transform: scale(1.1);
 }
-.copi{
+
+.copi {
     text-align: center;
+}
+
+/* Redes sociales en el footer */
+.social-footer {
+    text-align: center;
+    background-color: #333;
+    padding: 20px 0;
+    color: white;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.social-icon {
+    font-size: 2em;
+    color: white;
+    transition: transform 0.3s, color 0.3s;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+    color: #ff6f61; /* Cambia el color al pasar el mouse */
+}
+
+.whatsapp:hover {
+    color: #25D366; /* Color específico para WhatsApp */
+}
+
+.facebook:hover {
+    color: #1877F2; /* Color específico para Facebook */
+}
+
+.instagram:hover {
+    color: #E1306C; /* Color específico para Instagram */
+}
+
+.gmail:hover {
+    color: #D44638; /* Color específico para Gmail */
+}
+
+.conocenos-section {
+    max-width: 1000px;
+    margin: 40px auto; /* Centra el contenido */
+    padding: 0 20px; /* Espacio interno para los lados */
+    text-align: justify;
+}
+
+/* Estilos para la sección de tipos de ropa */
+.tipo-ropa-section {
+    max-width: 1000px;
+    margin: 40px auto;
+    padding: 0 20px;
+    text-align: center;
+}
+
+.tipo-ropa-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Ajusta las columnas según el tamaño de pantalla */
+    gap: 20px;
+}
+
+.tipo-ropa-item {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    padding: 15px;
+    transition: transform 0.2s, box-shadow 0.2s;
+    text-align: center;
+}
+
+.tipo-ropa-item:hover {
+    transform: scale(1.05); /* Aumenta el tamaño del elemento al pasar el ratón */
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Añade una sombra suave al pasar el ratón */
+}
+
+.tipo-ropa-item img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 5px;
+}
+
+.tipo-ropa-item p {
+    margin-top: 10px;
+    font-size: 1.1em;
+}
+
+/* Personaliza la barra de desplazamiento para Chrome, Safari y Edge */
+::-webkit-scrollbar {
+    width: 12px; /* Ancho de la barra de desplazamiento */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: rgba(136, 136, 136, 0.8); /* Color del "thumb" (parte que se desliza) */
+    border-radius: 10px; /* Bordes redondeados */
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgba(85, 85, 85, 0.9); /* Color del "thumb" al pasar el mouse */
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent; /* Sin fondo para la pista de desplazamiento */
+}
+
+/* Asegúrate de que el fondo de la sección sea transparente */
+body {
+    background-color: transparent; /* Cambia esto si tu fondo es diferente */
+    overflow-y: scroll; /* Asegúrate de que el contenido sea desplazable */
 }
 
