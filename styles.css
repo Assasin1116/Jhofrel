@@ -59,8 +59,6 @@ a:hover {
     align-items: center; /* Centra verticalmente los textos */
 }
 
-
-
 header.over {
     background-color: rgba(51, 51, 51, 0.8); 
     transition: background-color 0.3s ease; 
@@ -123,7 +121,7 @@ header.over:hover {
     padding: 15px;
     text-align: center;
     transition: transform 0.2s, box-shadow 0.2s;
-    width: 250px; 
+    width: 100%; /* Para que sea responsivo */
 }
 
 .product-card:hover {
@@ -168,114 +166,60 @@ button:hover {
     text-align: center;
 }
 
-/* Redes sociales en el footer */
-.social-footer {
-    text-align: center;
-    background-color: #333;
-    padding: 20px 0;
-    color: white;
-}
-
-.social-icons {
-    display: flex;
-    justify-content: center;
-    gap: 20px;
-}
-
-.social-icon {
-    font-size: 2em;
-    color: white;
-    transition: transform 0.3s, color 0.3s;
-}
-
-.social-icon:hover {
-    transform: scale(1.1);
-    color: #ff6f61; /* Cambia el color al pasar el mouse */
-}
-
-.whatsapp:hover {
-    color: #25D366; /* Color específico para WhatsApp */
-}
-
-.facebook:hover {
-    color: #1877F2; /* Color específico para Facebook */
-}
-
-.instagram:hover {
-    color: #E1306C; /* Color específico para Instagram */
-}
-
-.gmail:hover {
-    color: #D44638; /* Color específico para Gmail */
-}
 
 .conocenos-section {
-    max-width: 1000px;
-    margin: 40px auto; /* Centra el contenido */
-    padding: 0 20px; /* Espacio interno para los lados */
-    text-align: justify;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 5px;
+    margin-top: 20px;
 }
 
-/* Estilos para la sección de tipos de ropa */
-.tipo-ropa-section {
-    max-width: 1000px;
-    margin: 40px auto;
-    padding: 0 20px;
-    text-align: center;
+.social-footer {
+    position: relative;
+    background-color: #f1f1f1; /* Fondo del footer */
+}
+
+.social-icons a {
+    text-decoration: none;
+    font-size: 30px;
+    color: #333;
+    transition: color 0.3s;
+}
+
+.social-icons a:hover {
+    color: #28a745; /* Color al pasar el mouse */
+}
+
+.copi {
+    margin: 0;
+    padding: 10px 0;
+}
+.products {
+    margin-top: 8%;
 }
 
 .tipo-ropa-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); /* Ajusta las columnas según el tamaño de pantalla */
-    gap: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px; /* Espacio entre los elementos */
 }
 
 .tipo-ropa-item {
-    background-color: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    padding: 15px;
-    transition: transform 0.2s, box-shadow 0.2s;
-    text-align: center;
-}
-
-.tipo-ropa-item:hover {
-    transform: scale(1.05); /* Aumenta el tamaño del elemento al pasar el ratón */
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1); /* Añade una sombra suave al pasar el ratón */
-}
-
-.tipo-ropa-item img {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px;
-}
-
-.tipo-ropa-item p {
-    margin-top: 10px;
-    font-size: 1.1em;
-}
-
-/* Personaliza la barra de desplazamiento para Chrome, Safari y Edge */
-::-webkit-scrollbar {
-    width: 12px; /* Ancho de la barra de desplazamiento */
-}
-
-::-webkit-scrollbar-thumb {
-    background-color: rgba(136, 136, 136, 0.8); /* Color del "thumb" (parte que se desliza) */
+    background-color: white; /* Fondo blanco */
+    padding: 20px; /* Espacio interno */
     border-radius: 10px; /* Bordes redondeados */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+    width: calc(20% - 20px); /* Ajusta según el número de columnas deseado */
 }
 
-::-webkit-scrollbar-thumb:hover {
-    background-color: rgba(85, 85, 85, 0.9); /* Color del "thumb" al pasar el mouse */
+.product-card img {
+    max-width: 100%; /* Asegúrate de que las imágenes no se salgan del contenedor */
+    height: auto; /* Mantiene la proporción de la imagen */
 }
 
-::-webkit-scrollbar-track {
-    background-color: transparent; /* Sin fondo para la pista de desplazamiento */
-}
 
-/* Asegúrate de que el fondo de la sección sea transparente */
-body {
-    background-color: transparent; /* Cambia esto si tu fondo es diferente */
-    overflow-y: scroll; /* Asegúrate de que el contenido sea desplazable */
-}
+
+
+
+
 
