@@ -1,225 +1,226 @@
 * {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 body {
-    font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    background-color: #f4f4f4;
-    padding-top: 100px; /* Ajusta este valor según la altura de tu header */
-    overflow-y: auto; /* Asegura que solo haya desplazamiento vertical */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  background-color: #f4f4f4;
+  padding-top: 100px; /* Ajusta este valor según la altura de tu header */
+  overflow-y: auto; /* Asegura que solo haya desplazamiento vertical */
 }
 
 header {
-    position: fixed; /* Fija el header en la parte superior */
-    top: 0;
-    left: 0;
-    right: 0;
-    background: #333;
-    color: #fff;
-    padding: 5px 20px; /* Ajusta el padding según tus necesidades */
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    z-index: 1000; /* Asegúrate de que esté por encima del contenido */
-    transform: translateY(0); /* Inicialmente no hay desplazamiento */
-    transition: transform 0.3s ease; /* Animación suave */
+  position: fixed; /* Fija el header en la parte superior */
+  top: 0;
+  left: 0;
+  right: 0;
+  background: #333;
+  color: #fff;
+  padding: 5px 20px; /* Ajusta el padding según tus necesidades */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 1000; /* Asegúrate de que esté por encima del contenido */
+  transform: translateY(0); /* Inicialmente no hay desplazamiento */
+  transition: transform 0.3s ease; /* Animación suave */
 }
 
 a {
-    text-decoration: none; /* Elimina la línea de subrayado */
-    color: inherit; /* Mantiene el color del texto del elemento padre (en este caso, el h2) */
+  text-decoration: none; /* Elimina la línea de subrayado */
+  color: inherit; /* Mantiene el color del texto del elemento padre (en este caso, el h2) */
 }
 
 a:hover {
-    color: inherit; /* Mantiene el color cuando pasas el mouse por encima */
+  color: inherit; /* Mantiene el color cuando pasas el mouse por encima */
 }
 
 .logo {
-    width: 100px; /* Ajusta el tamaño del logo */
-    height: 100px;
-    border-radius: 50%;
-    margin-right: 15px;
+  width: 100px; /* Ajusta el tamaño del logo */
+  height: 100px;
+  border-radius: 50%;
+  margin-right: 15px;
 }
 
 .jhofrel {
-    margin-right: auto; /* Esto empuja los textos a la derecha */
+  margin-right: auto; /* Esto empuja los textos a la derecha */
 }
 
 .header {
-    background: #333;
-    color: whitesmoke;
-    float: right;
-    padding: 5px 5px;
-    display: flex;
-    opacity: 0.5; 
-    transition: opacity 0.3s;
-    gap: 5%; /* Reduce el espacio entre elementos */
-    align-items: center; /* Centra verticalmente los textos */
+  background: #333;
+  color: whitesmoke;
+  float: right;
+  padding: 5px 5px;
+  display: flex;
+  opacity: 0.5;
+  transition: opacity 0.3s;
+  gap: 5%; /* Reduce el espacio entre elementos */
+  align-items: center; /* Centra verticalmente los textos */
 }
 
 header.over {
-    background-color: rgba(51, 51, 51, 0.8); 
-    transition: background-color 0.3s ease; 
-    margin: 0;
-    opacity: 0.9; 
+  background-color: rgba(51, 51, 51, 0.8);
+  transition: background-color 0.3s ease;
+  margin: 0;
+  opacity: 0.9;
 }
 
 header.over:hover {
-    background-color: white;
-    margin: 0;
-    opacity: 0.9; 
+  background-color: white;
+  margin: 0;
+  opacity: 0.9;
 }
 
-.tipo, .conocenos, .Prendas {
-    position: relative; 
-    display: inline-block; 
-    font-size: 1em; 
-    transition: color 0.3s, transform 0.3s; 
-    color: white; 
-    margin-left: 10px; /* Reducido a 10px para mayor visibilidad */
-    white-space: nowrap;
+.tipo,
+.conocenos,
+.Prendas {
+  position: relative;
+  display: inline-block;
+  font-size: 1em;
+  transition: color 0.3s, transform 0.3s;
+  color: white;
+  margin-left: 10px; /* Reducido a 10px para mayor visibilidad */
+  white-space: nowrap;
 }
 
-.tipo::after, .conocenos::after, .Prendas::after {
-    content: '';
-    display: block;
-    width: 0; 
-    height: 2px; 
-    background: white; 
-    transition: width 0.3s; 
-    position: absolute;
-    left: 50%;
-    bottom: -5px; 
-    transform: translateX(-50%);
+.tipo::after,
+.conocenos::after,
+.Prendas::after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 2px;
+  background: white;
+  transition: width 0.3s;
+  position: absolute;
+  left: 50%;
+  bottom: -5px;
+  transform: translateX(-50%);
 }
 
-.tipo:hover, .conocenos:hover, .Prendas:hover {
-    transform: scale(1.1); 
-    color: white; 
-    opacity: 1;
+.tipo:hover,
+.conocenos:hover,
+.Prendas:hover {
+  transform: scale(1.1);
+  color: white;
+  opacity: 1;
 }
 
-.tipo:hover::after, .conocenos:hover::after, .Prendas:hover::after {
-    width: 100%; 
-    opacity: 0.9;
+.tipo:hover::after,
+.conocenos:hover::after,
+.Prendas:hover::after {
+  width: 100%;
+  opacity: 0.9;
 }
 
 .products {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    padding: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  padding: 20px;
 }
 
 .product-card {
-    background: #fff;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    margin: 10px;
-    padding: 15px;
-    text-align: center;
-    transition: transform 0.2s, box-shadow 0.2s;
-    width: 100%; /* Para que sea responsivo */
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 5px;
+  margin: 10px;
+  padding: 15px;
+  text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+  border-radius: 10px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
 }
 
 .product-card:hover {
-    transform: scale(1.05);
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+  transform: scale(1.05);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
 }
 
 .product-image {
-    max-width: 100%;
-    height: auto;
-    border-radius: 5px; /* Esquinas redondeadas para la imagen */
+  max-width: 100%;
+  height: auto;
+  border-radius: 5px; /* Esquinas redondeadas para la imagen */
 }
 
 button {
-    background: #28a745;
-    color: #fff;
-    border: none;
-    padding: 10px 20px;
-    cursor: pointer;
-    border-radius: 5px;
-    transition: background 0.3s;
+  background: #28a745;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  transition: background 0.3s;
 }
 
 button:hover {
-    background: #218838;
+  background: #218838;
 }
 
 .whatsapp-icon {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    font-size: 30px;
-    color: #25D366;
-    transition: transform 0.2s;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  font-size: 30px;
+  color: #25d366;
+  transition: transform 0.2s;
 }
 
 .whatsapp-icon:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .copi {
-    text-align: center;
+  text-align: center;
 }
 
-
 .conocenos-section {
-    padding: 20px;
-    background-color: #fff;
-    border-radius: 5px;
-    margin-top: 20px;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  margin-top: 20px;
 }
 
 .social-footer {
-    position: relative;
-    background-color: #f1f1f1; /* Fondo del footer */
+  position: relative;
+  background-color: #f1f1f1; /* Fondo del footer */
 }
 
 .social-icons a {
-    text-decoration: none;
-    font-size: 30px;
-    color: #333;
-    transition: color 0.3s;
+  text-decoration: none;
+  font-size: 30px;
+  color: #333;
+  transition: color 0.3s;
 }
 
 .social-icons a:hover {
-    color: #28a745; /* Color al pasar el mouse */
+  color: #28a745; /* Color al pasar el mouse */
 }
 
 .copi {
-    margin: 0;
-    padding: 10px 0;
+  margin: 0;
+  padding: 10px 0;
 }
 .products {
-    margin-top: 8%;
+  margin-top: 8%;
 }
 
 .tipo-ropa-grid {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px; /* Espacio entre los elementos */
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px; /* Espacio entre los elementos */
 }
 
 .tipo-ropa-item {
-    background-color: white; /* Fondo blanco */
-    padding: 20px; /* Espacio interno */
-    border-radius: 10px; /* Bordes redondeados */
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra */
-    width: calc(20% - 20px); /* Ajusta según el número de columnas deseado */
+  background-color: white; /* Fondo blanco */
+  padding: 20px; /* Espacio interno */
+  border-radius: 10px; /* Bordes redondeados */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1); /* Sombra */
+  width: calc(20% - 20px); /* Ajusta según el número de columnas deseado */
 }
 
 .product-card img {
-    max-width: 100%; /* Asegúrate de que las imágenes no se salgan del contenedor */
-    height: auto; /* Mantiene la proporción de la imagen */
+  max-width: 100%; /* Asegúrate de que las imágenes no se salgan del contenedor */
+  height: auto; /* Mantiene la proporción de la imagen */
 }
-
-
-
-
-
-
-
